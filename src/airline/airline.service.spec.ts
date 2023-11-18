@@ -50,4 +50,66 @@ describe('AirlineService', () => {
     expect(airlines).not.toBeNull();
     expect(airlines).toHaveLength(airlineList.length);
   });
+
+  it('findOne should return an airline by id', async () => {
+    const storedAirline: AirlineEntity = airlineList[0];
+    const airline: AirlineEntity = await service.findOne(storedAirline.id);
+    expect(airline).not.toBeNull();
+    expect(airline.name).toEqual(storedAirline.name);
+    expect(airline.foundationDate).toEqual(storedAirline.foundationDate);
+    expect(airline.webUrl).toEqual(storedAirline.webUrl);
+  });
+
+  it('findOne should throw an exception for an invalid airline', async () => {
+    await expect(() => service.findOne('10000')).rejects.toHaveProperty(
+      'message',
+      'The airline with the given id was not found',
+    );
+  });
+
+  it('create should return a new airline', async () => {
+    const airline: AirlineEntity = {
+      id: faker.company.name(),
+      name: faker.company.name(),
+      description: faker.lorem.sentence(),
+      foundationDate: faker.date.recent(),
+      webUrl: faker.image.url(),
+      airports: [],
+    };
+
+    const newAirline: AirlineEntity = await service.create(airline);
+    expect(newAirline).not.toBeNull();
+
+    const storedAirline: AirlineEntity = await airlineRepository.findOne({
+      where: { id: newAirline.id },
+    });
+    expect(storedAirline).not.toBeNull();
+    expect(storedAirline.name).toEqual(newAirline.name);
+    expect(storedAirline.description).toEqual(newAirline.description);
+    expect(storedAirline.foundationDate).toEqual(newAirline.foundationDate);
+    expect(storedAirline.webUrl).toEqual(newAirline.webUrl);
+  });
+
+  it('update should modify an airline', async () => {
+    const airline: AirlineEntity = airlineList[0];
+    airline.name = 'New name';
+    const updatedAirline: AirlineEntity = await service.update(
+      airline.id,
+      airline,
+    );
+    expect(updatedAirline).not.toBeNull();
+    const storedAirline: AirlineEntity = await airlineRepository.findOne({
+      where: { id: airline.id },
+    });
+    expect(storedAirline).not.toBeNull();
+    expect(storedAirline.name).toEqual(airline.name);
+    expect(storedAirline.description).toEqual(airline.description);
+  });
+
+  it('delete should remove an airline', async () => {
+    const airline: AirlineEntity = airlineList[0];
+    await service.delete(airline.id);
+    const deletedAirline: AirlineEntity = await airlineRepository.findOne({ where: { id: airline.id } })
+    expect(deletedAirline).toBeNull();
+  });
 });
