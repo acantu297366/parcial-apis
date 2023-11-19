@@ -33,7 +33,16 @@ export class AirlineService {
   }
 
   async create(airline: AirlineEntity): Promise<AirlineEntity> {
-    return await this.airlineRepository.save(airline);
+    const today = new Date();
+    const foundationDate = new Date(airline.foundationDate);
+    if (foundationDate.toISOString() < today.toISOString()) {
+      return await this.airlineRepository.save(airline);
+    } else {
+      throw new BusinessLogicException(
+        'The foundationDate can not be a day greater than today',
+        BusinessError.NOT_FOUND,
+      );
+    }
   }
 
   async update(id: string, airline: AirlineEntity): Promise<AirlineEntity> {
