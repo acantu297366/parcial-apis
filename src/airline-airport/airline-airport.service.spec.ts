@@ -110,4 +110,13 @@ describe('AirlineAirportService', () => {
     expect(storedAirport.country).toBe(airport.country);
     expect(storedAirport.city).toBe(airport.city);
   });
+
+  it('deleteAirportFromAirline should no error', async () => {
+    const airport: AirportEntity = airportsList[0];
+    const deletedAirport = await service.deleteAirportFromAirline(
+      airline.id,
+      airport.id,
+    );
+    expect(deletedAirport).toBeUndefined();
+  });
 });
