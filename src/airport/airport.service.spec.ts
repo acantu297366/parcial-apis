@@ -31,7 +31,7 @@ describe('AirportService', () => {
     const airport: AirportEntity = await repository.save({
       id: faker.company.name(),
       name: faker.company.name(),
-      code: faker.company.name(),
+      code: faker.company.name().slice(0, 3),
       country: faker.company.name(),
       city: faker.company.name(),
       airlines: [],
@@ -63,7 +63,7 @@ describe('AirportService', () => {
     const airport: AirportEntity = {
       id: faker.company.name(),
       name: faker.company.name(),
-      code: faker.company.name(),
+      code: faker.company.name().slice(0, 3),
       country: faker.company.name(),
       city: faker.company.name(),
       airlines: [],
