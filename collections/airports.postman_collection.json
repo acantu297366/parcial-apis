@@ -100,7 +100,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"12345\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+					"raw": "{\n    \"id\": \"12345\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEXICO\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -125,7 +125,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"12345\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+							"raw": "{\n    \"id\": \"12345\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEXICO\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -142,8 +142,8 @@
 							]
 						}
 					},
-					"status": "Internal Server Error",
-					"code": 500,
+					"status": "Precondition Failed",
+					"code": 412,
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
@@ -156,15 +156,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "52"
+							"value": "75"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\""
+							"value": "W/\"4b-zUxwA52/uwTHZ/isbU1pbc0gxEE\""
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 19 Nov 2023 17:16:21 GMT"
+							"value": "Sun, 19 Nov 2023 19:49:07 GMT"
 						},
 						{
 							"key": "Connection",
@@ -176,7 +176,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"statusCode\": 500,\n    \"message\": \"Internal server error\"\n}"
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"The airport code must be 3 characters length\"\n}"
 				}
 			]
 		},
