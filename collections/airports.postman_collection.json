@@ -1,0 +1,802 @@
+{
+	"info": {
+		"_postman_id": "18c15550-8268-4cb3-91ab-13810ad8cc17",
+		"name": "airports",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20649569"
+	},
+	"item": [
+		{
+			"name": "crear aeropuerto valido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airports",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airports"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airports",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airports",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airports"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"72-OnYp1In1wDR7+gusSuyDPDfXBvs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 17:15:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}"
+				}
+			]
+		},
+		{
+			"name": "crear aeropuerto invalido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"12345\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airports",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airports"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airports",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"12345\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airports",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airports"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 17:16:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 500,\n    \"message\": \"Internal server error\"\n}"
+				}
+			]
+		},
+		{
+			"name": "obtener todos los aeropuertos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airports",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airports"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airports",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airports",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airports"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "130"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"82-DQDTSAWDc6sFFMTZCr1svgD09j8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 17:17:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n        \"name\": \"Air Base\",\n        \"code\": \"MEX\",\n        \"country\": \"Mexico\",\n        \"city\": \"Monterrey\",\n        \"airlines\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "obtener aeropuerto por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airports/{{airportId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airports",
+						"{{airportId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airports",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airports/{{airportId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airports",
+								"{{airportId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"80-1Sdo0P6WW4rWnXYqUwH028ymcwk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 17:18:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\",\n    \"airlines\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "obtener aeropuerto por id que no existe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airports/{{airportId_not_exist}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airports",
+						"{{airportId_not_exist}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airports",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airports/{{airportId_not_exist}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airports",
+								"{{airportId_not_exist}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-RLtwopeukeJcdNCQI8lVdlt6kCc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 17:22:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The airport with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "actualizar aeropuerto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Mexico Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airports/{{airportId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airports",
+						"{{airportId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airports",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Mexico Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airports/{{airportId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airports",
+								"{{airportId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "121"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"79-f94wRu+HtOVtE4Sk2U3Tl7f9fmQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 17:20:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Mexico Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}"
+				}
+			]
+		},
+		{
+			"name": "actualizar aeropuerto con id que no existe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Mexico Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airports/{{airportId_not_exist}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airports",
+						"{{airportId_not_exist}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airports",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Mexico Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airports/{{airportId_not_exist}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airports",
+								"{{airportId_not_exist}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-RLtwopeukeJcdNCQI8lVdlt6kCc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 17:24:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The airport with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "eliminar aeropuerto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Mexico Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airports/{{airportId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airports",
+						"{{airportId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airports",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Mexico Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airports/{{airportId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airports",
+								"{{airportId}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 17:25:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "eliminar aeropuerto con id que no existe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Mexico Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airports/{{airportId_not_exist}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airports",
+						"{{airportId_not_exist}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airports",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120020\",\n    \"name\": \"Mexico Air Base\",\n    \"code\": \"MEX\",\n    \"country\": \"Mexico\",\n    \"city\": \"Monterrey\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airports/{{airportId_not_exist}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airports",
+								"{{airportId_not_exist}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-RLtwopeukeJcdNCQI8lVdlt6kCc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 17:27:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The airport with the given id was not found\"\n}"
+				}
+			]
+		}
+	]
+}

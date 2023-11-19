@@ -1,0 +1,677 @@
+{
+	"info": {
+		"_postman_id": "01a53219-5554-4466-af49-a0a014daa275",
+		"name": "airlines",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20649569"
+	},
+	"item": [
+		{
+			"name": "crear aerolinea valida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120004\",\n    \"name\": \"Masirah Air Base\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airlines",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airlines"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airlines",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Air Base\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airlines",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airlines"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Air Base\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "crear aerolinea invalida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"144602ac\",\n    \"name\": \"Masirah Air Base\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airlines",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airlines"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airlines",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Air Base\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airlines",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airlines"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 500,\n    \"message\": \"Internal server error\"\n}"
+				}
+			]
+		},
+		{
+			"name": "obtener todas las aerolineas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airlines",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airlines"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airlines",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Air Base\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airlines",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airlines"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n        \"name\": \"Masirah Air Base\",\n        \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n        \"foundationDate\": \"2023-10-08T15:52:06.000Z\",\n        \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\",\n        \"airports\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "obtener aerolinea por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airlines/{{airlineId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airlines",
+						"{{airlineId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airlines",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Air Base\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airlines/{{airlineId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airlines",
+								"{{airlineId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Air Base\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06.000Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\",\n    \"airports\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "obtener aerolinea por id que no existe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airlines/{{airlineId_not_exist}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airlines",
+						"{{airlineId_not_exist}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airlines",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Air Base\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airlines/{{airlineId_not_exist}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airlines",
+								"{{airlineId_not_exist}}"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The airline with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "actualizar aerolinea",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Mexico\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airlines/{{airlineId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airlines",
+						"{{airlineId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airlines",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Mexico\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airlines/{{airlineId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airlines",
+								"{{airlineId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "302"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12e-jtrSKrtDwMvayfeNyXDOY1T+2xI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 16:56:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Mexico\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "actualizar aerolinea con id que no existe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Colombia\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airlines/{{airlineId_not_exist}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airlines",
+						"{{airlineId_not_exist}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airlines",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"144602ac-1278-11ed-861d-0242ac120002\",\n    \"name\": \"Masirah Mexico\",\n    \"description\": \"Reposition Left Ankle Joint with Ext Fix, Perc Approach\",\n    \"foundationDate\": \"2023-10-08T15:52:06Z\",\n    \"webUrl\": \"http://tumblr.com/ultrices/vel/augue/vestibulum/ante.xml?velit=ultrices&donec=aliquet&diam=maecenas&neque=leo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airlines/{{airlineId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airlines",
+								"{{airlineId}}"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "302"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12e-jtrSKrtDwMvayfeNyXDOY1T+2xI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 16:56:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The airline with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "eliminar aerolinea",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airlines/{{airlineId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airlines",
+						"{{airlineId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airlines",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airlines/{{airlineId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airlines",
+								"{{airlineId}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 16:59:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "eliminar aerolinea con id que no existe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/airlines/{{airlineId_not_exist}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"airlines",
+						"{{airlineId_not_exist}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "airlines",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/airlines/{{airlineId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"airlines",
+								"{{airlineId}}"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Nov 2023 16:59:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The airline with the given id was not found\"\n}"
+				}
+			]
+		}
+	]
+}
