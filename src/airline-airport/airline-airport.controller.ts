@@ -7,13 +7,16 @@ import {
   Param,
   Post,
   Put,
+  UseInterceptors,
 } from '@nestjs/common';
 import { AirlineAirportService } from './airline-airport.service';
 import { plainToInstance } from 'class-transformer';
 import { AirportDto } from '../airport/airport.dto';
 import { AirportEntity } from '../airport/airport.entity';
+import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
 
 @Controller('airlines')
+@UseInterceptors(BusinessErrorsInterceptor)
 export class AirlineAirportController {
   constructor(private readonly airlineAirportService: AirlineAirportService) {}
 
@@ -44,16 +47,17 @@ export class AirlineAirportController {
     return await this.airlineAirportService.findAirportsByAirline(airportId);
   }
 
-  @Put(':airlineId/airports')
-  async updateAirportsFromAirline(
-    @Body() airportsDto: AirportDto[],
+  @Put(':airlineId/airports/:airportId')
+  async updateAirportFromAirline(
+    @Body() airportDto: AirportDto,
     @Param('airlineId') airlineId: string,
+    @Param('airportId') airportId: string,
   ) {
-    const airports = plainToInstance(AirportEntity, airportsDto);
-    console.log(airports); // BORRAR esta linea
-    return await this.airlineAirportService.updateAirportsFromAirline(
+    const airport: AirportEntity = plainToInstance(AirportEntity, airportDto);
+    return await this.airlineAirportService.updateAirportFromAirline(
+      airport,
       airlineId,
-      'airports', //VALIDAR BIEN ESTA PARTE
+      airportId,
     );
   }
 

@@ -7,13 +7,16 @@ import {
   Param,
   Post,
   Put,
+  UseInterceptors,
 } from '@nestjs/common';
 import { AirlineService } from './airline.service';
 import { plainToInstance } from 'class-transformer';
 import { AirlineDto } from './airline.dto';
 import { AirlineEntity } from './airline.entity';
+import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
 
 @Controller('airlines')
+@UseInterceptors(BusinessErrorsInterceptor)
 export class AirlineController {
   constructor(private readonly airlineService: AirlineService) {}
   @Get()

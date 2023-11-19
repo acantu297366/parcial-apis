@@ -64,7 +64,7 @@ export class AirlineAirportService {
     const airport: AirportEntity = await this.airportRepository.findOne({
       where: { id: airportId },
     });
-    if (!airportId)
+    if (!airport)
       throw new BusinessLogicException(
         'The airport with the given id was not found',
         BusinessError.NOT_FOUND,
@@ -93,10 +93,25 @@ export class AirlineAirportService {
     return airlineAirport;
   }
 
-  async updateAirportsFromAirline(
+  async updateAirportFromAirline(
+    airport: AirportEntity,
     airlineId: string,
-    nameFromAiportToUpdate: string,
+    airportId: string,
   ): Promise<AirportEntity[]> {
+    let oldAirport: AirportEntity = await this.airportRepository.findOne({
+      where: { id: airportId },
+      relations: ['airlines'],
+    });
+    if (!oldAirport) {
+      throw new BusinessLogicException(
+        'The airport with the given id was not found',
+        BusinessError.NOT_FOUND,
+      );
+    }
+    oldAirport = {
+      ...airport,
+    };
+    await this.airportRepository.save(oldAirport);
     const airline: AirlineEntity = await this.airlineRepository.findOne({
       where: { id: airlineId },
       relations: ['airports'],
@@ -106,16 +121,10 @@ export class AirlineAirportService {
         'The airline with the given id was not found',
         BusinessError.NOT_FOUND,
       );
-    // TODO: Add for loop to update the name field of the airline airports returned
-    const newName = nameFromAiportToUpdate;
-    console.log(newName);
     return airline.airports;
   }
 
-  async deleteAirportFromAirline(airlineId: string, airportIdToDelete: string) {
-    // Verify if after the where is where I have to add and the airportID
-    const airportId = airportIdToDelete;
-    console.log(airportId);
+  async deleteAirportFromAirline(airlineId: string, airportId: string) {
     const airline: AirlineEntity = await this.airlineRepository.findOne({
       where: { id: airlineId },
       relations: ['airports'],
@@ -125,5 +134,28 @@ export class AirlineAirportService {
         'The airline with the given id was not found',
         BusinessError.NOT_FOUND,
       );
+
+    const airport: AirportEntity = await this.airportRepository.findOne({
+      where: [{ id: airportId }],
+      relations: ['airlines'],
+    });
+    if (!airport)
+      throw new BusinessLogicException(
+        'The airport with the given id was not found',
+        BusinessError.NOT_FOUND,
+      );
+
+    const airlineAirport: AirportEntity = airline.airports.find(
+      (e) => e.id === airport.id,
+    );
+
+    if (!airlineAirport)
+      throw new BusinessLogicException(
+        'The airport with the given id is not associated to the airline',
+        BusinessError.PRECONDITION_FAILED,
+      );
+
+    airline.airports = airline.airports.filter((e) => e.id !== airportId);
+    await this.airlineRepository.save(airline);
   }
 }
